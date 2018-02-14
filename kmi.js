@@ -23,7 +23,7 @@ angular.module('kmiApp', [])
                 $scope.Classification = "Reikia daugiau valgyti";
                 
             else if (val >= 18.5 & val <= 25)
-                $scope.Classification = "Normalus";
+                $scope.Classification = "Sveiko žmogaus masės indeksas";
                 
             
         
@@ -31,7 +31,7 @@ angular.module('kmiApp', [])
                 $scope.Classification= "Nutukimas";
                 
             
-            else $scope.Value = $scope.Classification = window.alert("Prašome užpildyti laukelius teisingai");
+            else  $scope.Classification = window.alert("Prašome užpildyti laukelius teisingai");
             
         
     };
