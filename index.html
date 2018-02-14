@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="kmiApp" >
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Kūno masės indeksas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="kmi.js"></script>
+    
+    
+    
+  </head>
+    
+    
+  <body>
+    
+          <div class="navbar-brand">Kūno masės indeksas</div>
+        
+    <div class="container-fluid" ng-controller="KmiController">
+      <form ng-submit="Calculate()" role="form">
+        <div class="form-group">
+          <label for="weight">Svoris:</label>
+          <input id="weight" placeholder="Kilogramai " ng-model="Weight" class="form-control" required/>
+        </div>
+        
+        
+
+        <div class="form-group">
+          <label for="height">Ūgis:</label>
+          <input id="height" placeholder="Centimetrai " ng-model="Height" class="form-control" required/>
+        </div>
+
+        
+        
+        <input class="btn btn-primary" type="submit" value="Skaičiuoti">
+        <input class="btn btn-danger" type="button" value="Iš naujo" ng-click="Reset()">
+      </form>
+
+      <div ng-if="Value != '--'" class="well" style="margin-top:30px;">
+        <p>KMI: <i>{{Value.toFixed(2)}} ({{Classification}})</i></p>
+      </div>
+    </div>
+  </body>
+    
+ 
+    
+    
+    
+</html>
