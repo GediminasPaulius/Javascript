@@ -13,29 +13,32 @@
     
   <body>
     
-          <div class="navbar-brand">Kūno masės indeksas</div>
+          <h1> Kūno masės indeksas</h1>
         
-    <div class="container-fluid" ng-controller="KmiController">
+    <div  ng-controller="KmiController">
       <form ng-submit="Calculate()" role="form">
         <div class="form-group">
           <label for="weight">Svoris:</label>
           <input id="weight" placeholder="Kilogramai " ng-model="Weight" class="form-control" required/>
         </div>
         
-        
+        <p class="indent"></p>
 
         <div class="form-group">
           <label for="height">Ūgis:</label>
           <input id="height" placeholder="Centimetrai " ng-model="Height" class="form-control" required/>
         </div>
 
+        <p class="indent"></p>
         
-        
-        <input class="btn btn-primary" type="submit" value="Skaičiuoti">
-        <input class="btn btn-danger" type="button" value="Iš naujo" ng-click="Reset()">
+        <input  type="submit" value="Skaičiuoti">
+          
+          <p class="indent"></p>
+          
+        <input type="button" value="Iš naujo" ng-click="Reset()">
       </form>
 
-      <div ng-if="Value != '--'" class="well" style="margin-top:30px;">
+      <div ng-if="Value != '--'" class="well" style="margin-top:50px;">
         <p>KMI: <i>{{Value.toFixed(2)}} ({{Classification}})</i></p>
       </div>
     </div>
